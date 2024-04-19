@@ -73,27 +73,16 @@ def lone_sum(request):
         int1 = form.cleaned_data["int1"]
         int2 = form.cleaned_data["int2"]
         int3 = form.cleaned_data["int3"]
-        sum_lone = 
-        return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3})
+        if int1 == int2 == int3:
+            return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3, "lone_sum": 0})
+        if int2 == int3:
+            return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3, "lone_sum": int1})
+        if int1 == int3:
+            return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3, "lone_sum": int2})
+        if int1 == int2:
+            return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3, "lone_sum": int3})
+        return render(request, "cb4.html", {"int1": int1, "int2": int2, "int3": int3, "lone_sum": int1 + int2 + int3})
     else:
         return render(request, "cb4.html")
         
 
-# def lone_sum(a, b, c):
-#   if a == b == c:
-#     return 0
-#   if b == c:
-#     return a
-#   if a == c:
-#     return b
-#   if a == b:
-#     return c
-#   return a + b + c
-
-
-
-# def string_splosion(str):
-#     result = ''
-#     for i in range(len(str)):
-#         result += str[:i+1]
-#     return result
