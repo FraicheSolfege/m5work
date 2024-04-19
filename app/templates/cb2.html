@@ -1,0 +1,12 @@
+{% extends 'root.html' %}
+{% block content %}
+    <form action="{% url 'cb2' %}" method="GET">
+        <label>
+            <p>Type!</p>
+            <input type="text" name="word" required>
+        </label>
+        <button>Click</button>
+        {% if wordsplosion %}
+        <p>{{wordsplosion}}</p>
+        {% endif %}
+{% endblock content%}

@@ -1,0 +1,14 @@
+{% extends 'root.html' %}
+{% block content %}
+    <form action="{% url 'cb1' %}" method="GET">
+        <label>
+            <p>Please declare a number within 10 of 100 or 200!</p>
+            <input type="number" name="num" required>
+        </label>
+        <button>Is it..?</button>
+        {% if near_hundred %}
+        <p>{{num}} is within 10!</p>
+        {% else %}
+        <p>{{num}} is NOT within 10!</p>
+        {% endif %}
+{% endblock content%}

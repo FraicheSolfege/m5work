@@ -1,31 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{% url 'order_total' %}"method="GET">
-        <label>
-            <p>How Many Burgers?</p>
-            <input type="number" name="burgers" required>
-        </label>
-        <label>
-            <p> How Many Fries?</p>
-            <input type="number" name="fries"required>
-        </label>
-        <label>
-            <p> How Many Drinks?</p>
-            <input type="number" name="drinks"required>
-        </label>
-        <button>Calculate Cost!</button>
-    </form>
-    {% if total_cost is not None %}
-        <p>Num of Burgs: {{burgers}}
-           Num of Fries: {{fries}}
-           Num of Drinks: {{drinks}}
-           total: {{order_total}}
-    {% endif %}
-</body>
-</html>
+{% extends 'root.html' %}
+{% block content %}
+<form action="{% url 'order_total' %}"method="GET">
+    <label>
+        <p>How Many Burgers?</p>
+        <input type="number" name="burgers" required>
+    </label>
+    <label>
+        <p> How Many Fries?</p>
+        <input type="number" name="fries"required>
+    </label>
+    <label>
+        <p> How Many Drinks?</p>
+        <input type="number" name="drinks"required>
+    </label>
+    <button>Calculate Cost!</button>
+</form>
+{% if total_cost is not None %}
+    <p>Num of Burgs: {{burgers}}</p>
+    <p>Num of Fries: {{fries}}</p>
+    <p>Num of Drinks: {{drinks}}</p>
+    <p>total: ${{total_cost}}</p>
+{% endif %}
+{% endblock content%}

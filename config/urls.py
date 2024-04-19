@@ -23,5 +23,9 @@ urlpatterns = [
     path("hey-name/", app.views.hey_name, name ="hey_name"),
     path("future-age/", app.views.how_old, name="future_age"),
     path("order-total/", app.views.order_total, name="order_total"),
+    path("cb1/", app.views.near_hundred, name="cb1"),
+    path("cb2/", app.views.stringsplosion, name="cb2"),
+    path("cb3/", app.views.catdog, name="cb3"),
+    path("cb4", app.views.lone_sum, name="cb4"),
     path('admin/', admin.site.urls),
 ]

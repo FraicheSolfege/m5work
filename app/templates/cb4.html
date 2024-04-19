@@ -1,0 +1,21 @@
+{% extends 'root.html' %}
+{% block content %}
+    <form action="{% url 'cb4' %}" method="GET">
+        <label>
+            <p>Int 1</p>
+            <input type="number" name="int1" required>
+        </label>
+
+        <label>
+            <p>Int 2</p>
+            <input type="number" name="int2" required>
+        </label>
+
+        <label>
+            <p>Int 3</p>
+            <input type="number" name="int3" required>
+        </label>
+
+        <button>lone sum</button>
+    </form>
+{% endblock content%}

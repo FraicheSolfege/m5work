@@ -1,0 +1,14 @@
+{% extends 'root.html' %}
+{% block content %}
+    <form action="{% url 'cb3' %}" method="GET">
+        <label>
+            <p>Type!</p>
+            <input type="text" name="is_catdog" required>
+        </label>
+        <button>CATDAWG</button>
+        {% if catdog %}
+        <p>True!</p>
+        {% else %}
+        <p>False!</p>
+        {% endif %}
+{% endblock content%}
